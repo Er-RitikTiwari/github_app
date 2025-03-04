@@ -28,5 +28,17 @@
     "vite": "^3.0.7",
     "vite-plugin-eslint": "^1.8.1",
     "vitest": "^0.22.1"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Er-RitikTiwari/github_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Er-RitikTiwari/github_app/issues"
+  },
+  "homepage": "https://github.com/Er-RitikTiwari/github_app#readme",
+  "description": ""
 }
