@@ -1,0 +1,47 @@
+name: Deploy website
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      
+      - name: login docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+                
+      # - name: Build and push multi-arch image
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     push: true
+      #     tags: ritikkkk/notes-image:latest 
+      
+      - name: build image
+        run: |
+          docker build -t ritikkkk/github_app:latest .
+      
+      - name: push image
+        run: |
+          cd mynotes
+          docker push ritikkkk/github_app:latest 
+                                               
+      - name:  Azure login
+        run: az login --tenant ${{ secrets.TENANT_ID }}
+      - name:  connect cluster
+        run: az aks get-credentials --resource-group trial-aks --name ritik-cluster --overwrite-existing
+
+      - name:  running deploy file
+        run: |
+          cd k8s
+          kubectl apply -f deployment.yml
+          kubectl apply -f service.yml
+
+          
+      - name:  getting the external ip 
+        run: echo " public ip $(kubectl get svc -n notes-space)"
+      
+
