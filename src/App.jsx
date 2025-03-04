@@ -8,7 +8,7 @@ function App() {
         <div id="logo-img">
           <img src={logo} />
         </div>
-        <h1>Learn & Master GitHub With Ritik</h1>
+        <h1>Learn & Master GitHub Action</h1>
       </header>
       <MainContent />
     </>
