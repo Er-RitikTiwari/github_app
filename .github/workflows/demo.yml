@@ -37,6 +37,7 @@ jobs:
         run: |
           cd k8s
           kubectl apply -n new-assignment -f deployment.yml
+          kubectl -n assignment rollout restart deployment git-deployment
           kubectl apply -n new-assignment -f service.yml
 
           
