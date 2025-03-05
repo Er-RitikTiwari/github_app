@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: git-ingress
+spec:
+  host: 20.28.51.72.rittikk.com
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: git-app-service
+            port:
+              number: 80
