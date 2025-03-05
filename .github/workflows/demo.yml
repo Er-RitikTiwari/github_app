@@ -39,6 +39,7 @@ jobs:
           kubectl apply -n new-assignment -f deployment.yml
           kubectl -n new-assignment rollout restart deployment git-deployment
           kubectl apply -n new-assignment -f service.yml
+          kubectl apply -f https://raw.githubusercontent.com/Azure-Samples/aks-store-demo/main/sample-manifests/docs/app-routing/aks-store-deployments-and-services.yaml 
           kubectl apply -n new-assignment -f ingress.yml
           
       - name:  getting the external ip 
