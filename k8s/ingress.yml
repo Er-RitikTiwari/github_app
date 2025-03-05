@@ -5,7 +5,7 @@ metadata:
 spec:
   
   rules:
-  - host: 20.28.51.72.rittikk.com
+  - host: 20.28.51.72.rittikk.io
   - http:
       paths:
       - path: /
