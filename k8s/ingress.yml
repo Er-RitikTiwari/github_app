@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: git-ingress
 spec:
-  host: 20.28.51.72.rittikk.com
+  
   rules:
+  - host: 20.28.51.72.rittikk.com
   - http:
       paths:
       - path: /
