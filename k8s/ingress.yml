@@ -5,7 +5,7 @@ metadata:
 spec:
   
   rules:
-  - host: 20.28.51.72
+  - host: qzvseaizzzqw.io
   - http:
       paths:
       - path: /
