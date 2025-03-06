@@ -43,6 +43,8 @@ jobs:
           kubectl apply -n new-assignment -f ingress.yml
           
       - name:  getting the external ip 
-        run: echo " public ip $(kubectl get svc -n new-assignment)"
+        run: |
+          echo " public ip $(kubectl get svc -n new-assignment)"
+          echo " public ip $(kubectl get all -n new-assignment)"
       
 
